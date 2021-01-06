@@ -1,0 +1,96 @@
+{
+  "num_products": 13,
+  "products": [
+    {
+      "id": 1,
+      "name": "Traje Amarillo",
+      "img": "/img/products/PicsArt_07-19-01.54.50.jpg",
+      "price": "520.00",
+      "description": "Este es un traje amarillo bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 2,
+      "name": "Traje Ambar",
+      "img": "/img/products/PicsArt_07-19-01.59.27.jpg",
+      "price": "510.00",
+      "description": "Este es un traje ambar bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 3,
+      "name": "Traje Azul",
+      "img": "/img/products/PicsArt_08-05-07.10.09.jpg",
+      "price": "530.00",
+      "description": "Este es un traje azul bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 4,
+      "name": "Otro Traje Azul",
+      "img": "/img/products/PicsArt_08-05-07.10.34.jpg",
+      "price": "525.00",
+      "description": "Este es otro traje azul bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 5,
+      "name": "Traje Rosa",
+      "img": "/img/products/PicsArt_08-20-04.27.53.jpg",
+      "price": "515.00",
+      "description": "Este es un traje rosa bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 6,
+      "name": "Traje Negro",
+      "img": "/img/products/PicsArt_08-21-11.23.41.jpg",
+      "price": "513.00",
+      "description": "Este es un traje negro bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 7,
+      "name": "Otro Traje Negro",
+      "img": "/img/products/PicsArt_08-21-11.32.35.jpg",
+      "price": "535.00",
+      "description": "Este es otro traje negro bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 8,
+      "name": "Tra veeez",
+      "img": "/img/products/PicsArt_08-22-11.39.09.jpg",
+      "price": "532.00",
+      "description": "Este es otro del otro traje negro bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 9,
+      "name": "Traje Gris",
+      "img": "/img/products/PicsArt_08-26-11.01.12.jpg",
+      "price": "527.00",
+      "description": "Este es un traje gris bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 10,
+      "name": "Traje de Palmas",
+      "img": "/img/products/PicsArt_08-26-11.06.42.jpg",
+      "price": "522.00",
+      "description": "Este es un traje de palmas bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 11,
+      "name": "Traje de Cielo",
+      "img": "/img/products/PicsArt_08-27-05.49.20.jpg",
+      "price": "537.00",
+      "description": "Este es un traje de cielo bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 12,
+      "name": "Pues Traje Negro",
+      "img": "/img/products/PicsArt_08-30-08.46.47.jpg",
+      "price": "542.00",
+      "description": "Este es otro, creo que el ultimo traje negro bla bla bla blabla blabla bla blablabla."
+    },
+    {
+      "id": 13,
+      "name": "Ahi estuvo",
+      "img": "/img/products/PicsArt_08-30-08.49.42.jpg",
+      "price": "540.00",
+      "description": "Mentí, este si es el ultimo traje negro bla bla bla blabla blabla bla blablabla."
+    }
+  ]
+}

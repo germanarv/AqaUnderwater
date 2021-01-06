@@ -1,0 +1,128 @@
+.mainSignIn {
+  display: flex;
+  flex-direction: column;
+}
+
+.titleSignIn {
+  width: max-content;
+  margin: 3rem auto 0 auto;
+  color: #0f3d44;
+}
+
+.regSignIn {
+  margin: 0 auto 2rem auto !important;
+}
+
+.borderSignIn {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid#96adb1;
+  width: max-content;
+  margin: 0 auto 3rem auto;
+  border-radius: 10px;
+}
+
+.formSignIn {
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+  margin: 2rem;
+}
+
+.formLabel {
+  width: 60vw;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f3d44;
+}
+
+.formInput {
+  width: 60vw;
+  margin-bottom: 1rem;
+  height: 2rem;
+  border: 1px solid #0f3d44;
+  border-radius: 4px;
+  padding-left: 0.3rem;
+}
+
+.btnSignIn {
+  width: 40vw;
+  height: 2rem;
+  margin: 0 auto;
+  background-color:hsl(188, 85%, 40%);
+  color: #fbfeff;
+  font-weight: 700;
+  font-size: 0.9em;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+.captionSignIn {
+  font-size: 0.7rem;
+  width: max-content;
+  margin: 0.5rem auto 2rem auto;
+}
+
+.captionSignIn a {
+  color: #0645AD;
+}
+
+.btnRegister {
+  width: 40vw;
+  height: 2rem;
+  margin: 0 auto 2rem auto;
+  background-color:hsl(188, 85%, 40%);
+  color: #fbfeff;
+  font-weight: 700;
+  font-size: 0.9em;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+}
+
+@media (min-width: 650px) {
+  .titleSignIn {
+    font-size: 3rem;
+    margin: 4rem auto 0 auto;
+  }
+
+  .borderSignIn {
+    width: 500px;
+    margin: 0 auto 5rem auto;
+  }
+
+  .formSignIn {
+    width: 60%;
+    margin: 2rem auto;
+  }
+
+  .formLabel {
+    width: 100%;
+    font-size: 1.4rem;
+    margin-bottom: 0.7rem;
+  }
+  
+  .formInput {
+    width: 100%;
+  }
+
+  .btnSignIn {
+    width: 40%;
+    height: 2.5rem;
+    border-radius: 20px;
+  }
+
+  .captionSignIn {
+    font-size: 0.9rem;
+  }
+
+  .btnRegister {
+    width: 40%;
+    height: 2.5rem;
+    border-radius: 20px;
+  }
+}
