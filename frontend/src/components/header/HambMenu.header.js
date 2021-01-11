@@ -19,7 +19,7 @@ class HambMenu extends Component {
       <nav className="mainMenu">
         <FontAwesomeIcon icon={faBars} className="menuIcon" id="menuLines" onClick={this.clickMenu} />
         <FontAwesomeIcon icon={faTimes} className="menuIcon close hidden" id="menuTimes" onClick={this.clickMenu} />
-        <ul id="sideMenu" className="menu">
+        <ul id="sideMenu" className="menu sideMenu">
           <li><a href="/" className="menuLink">Inicio</a></li>
           <li><a href="/signin" className="menuLink">Mi cuenta</a></li>
           <li><a href="/products" className="menuLink">Productos</a></li>

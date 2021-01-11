@@ -45,7 +45,7 @@ header {
   position: relative;
   z-index: 20;
   opacity: 1;
-  transition: all 0.5s ease-in 0.5s;
+  transition: all 1.5s;
   font-size: 1.8rem;
   margin-right: auto;
 }
@@ -57,27 +57,45 @@ header {
 }
 
 .menu {
-  position: absolute;
-  transform: translateX(-100vw);
-  transition: all 0.5s ease-in;
   list-style-type: none;
-  font-size: 1.5rem;
-  line-height: 4;
   background-color: rgba(251, 254, 255, 0.95);
   color: #0f3d44;
   margin: 0;
+  font-weight: 800;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.sideMenu {
+  position: absolute;
+  transform: translateX(-200vw);
+  transition: all 0.5s ease-out;
+  font-size: 1.5rem;
+  line-height: 4;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  font-weight: 800;
-  text-align: center;
   z-index: 10;
   padding: 0;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
+}
+
+.lowerNav {
+  width: 100vw;
+  border-bottom: 1px solid hsl(188, 85%, 40%);
+  display: none;
+}
+
+.topMenu {
+  padding: 0.7rem 0;
+}
+
+.topMenuLink {
+  margin: 0 2rem;
+  cursor: pointer;
 }
 
 .menuLink {
@@ -112,5 +130,19 @@ header {
 
   .menuIcon {
     margin-left: 3em;
+  }
+}
+
+@media (min-width: 770px) {
+  .lowerNav {
+    display: flex;
+  }
+
+  .sideMenu {
+    display: none;
+  }
+
+  .menuIcon {
+    display: none;
   }
 }
