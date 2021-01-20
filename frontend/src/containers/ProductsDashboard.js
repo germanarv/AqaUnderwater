@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 import NavHeader from '../components/header/NavHeader.header';
 import MainFooter from '../components/footer/MainFooter.footer';
 import AllProducts from '../components/product/AllProducts.product';
 
-const productsData = require("../data_products.json");
+// const productsData = require("../data_products.json");
 
 
 class ProductsDashboard extends Component {
@@ -13,10 +14,22 @@ class ProductsDashboard extends Component {
     products: {}
   }
 
+  // componentDidMount() {
+  //   this.setState({
+  //     products: productsData
+  //   })
+  // }
+
   componentDidMount() {
-    this.setState({
-      products: productsData
-    })
+    axios.get('http://localhost:8000/products')
+          .then(res => {
+            this.setState({
+              products: res.data
+            })
+          })
+          .catch(err => {
+            console.log(err);
+          })
   }
 
   render() {

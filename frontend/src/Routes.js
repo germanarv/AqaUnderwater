@@ -13,7 +13,7 @@ function Routes() {
     <Switch>
       <Route exact path="/" component={HomeDashboard} />
       <Route exact path="/products" component={ProductsDashboard} />
-      <Route path="/products/:id" component={SingleProduct} />
+      <Route path="/products/:prodID" component={SingleProduct} />
       <Route path="/signin" component={SignInMain} />
       <Route path="/register" component={RegisterMain} />
     </Switch>

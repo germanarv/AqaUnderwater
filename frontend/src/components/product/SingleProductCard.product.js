@@ -3,13 +3,13 @@ import React from 'react';
 import '../styles/ProductCardStyle.product.css';
 
 
-function SingleProductCard() {
+function SingleProductCard(props) {
   return (
     <main>
       <div className="singleCard">
-        <h1 className="singleTitle">Traje Amarillo</h1>
-        <img className="singleImgProduct" src={process.env.PUBLIC_URL + "/img/products/PicsArt_07-19-01.54.50.jpg"} alt="Traje Amarillo" />
-        <p className="singlePrice">Precio: $520.00</p>
+        <h1 className="singleTitle">{props.product.name}</h1>
+        <img className="singleImgProduct" src={props.product.img} alt={props.product.name} />
+        <p className="singlePrice">Precio: {props.product.price}</p>
         <div className="singleQtyAdd">
           <div className="singleQtyMain">
             <input className="singleBtnQty" type="button" value="-" />
@@ -20,7 +20,7 @@ function SingleProductCard() {
         </div>
         <div className="singleDesc">
           <h3>Descripción</h3>
-          <p>Este es un traje amarillo bla bla bla blabla blabla bla blablabla aslkjdlk alksjdfjkldsj qeporiue; alskjnlsjk aslfjksklj.</p>
+          <p>{props.product.description}</p>
         </div>
       </div>
     </main>

@@ -5,17 +5,20 @@ import ProductCard from './ProductCard.product';
 import '../styles/ProductCardStyle.product.css';
 
 
-function AllProducts(props) {
+function AllProducts({ productsData }) {
+
+  productsData = Array.from(productsData);
+
   return (
     <main>
       <div>
         <FiltersProduct />
       </div>
       <div className="ProductDashboard">
-        {props.productsData.products &&
-          props.productsData.products.map((product, i) => {
+        {productsData &&
+          productsData.map((product, i) => {
             return (
-              <ProductCard key={product.id} product={product} />
+              <ProductCard key={i} product={product} />
             );
           })
         }

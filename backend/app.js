@@ -1,5 +1,6 @@
 const express = require('express');
 const session = require('express-session');
+const cors = require('cors');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo')(session);
 const path = require('path');
@@ -13,6 +14,8 @@ const routes = require('./routes/index');
 
 // Create our Express app
 const app = express();
+
+app.use(cors());
 
 // Serves up static files from the public folder. Anything in public/ will just be served up as the file it is
 app.use(express.static(path.join(__dirname, 'public')));
