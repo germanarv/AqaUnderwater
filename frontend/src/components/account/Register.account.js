@@ -3,7 +3,7 @@ import React from 'react';
 import '../styles/FormsStyle.account.css';
 
 
-function Register() {
+function Register(props) {
   return (
     <main>
       <div className="mainSignIn">
@@ -11,19 +11,22 @@ function Register() {
         <p className="captionSignIn regSignIn">¿Ya tienes una cuenta? <a href="/signin">Inicia Sesión</a></p>
         <div className="borderSignIn">
           <form className="formSignIn">
-            <label for="firstName" className="formLabel">Nombre</label>
-            <input type="text" id="firstName" name="firstName" placeholder="Introduce tu nombre" className="formInput" />
+            <label htmlFor="firstName" className="formLabel">Nombre</label>
+            <input autoFocus type="text" id="firstName" name="firstName" placeholder="Introduce tu nombre" className="formInput" onChange={props.onChange} />
 
-            <label for="lastName" className="formLabel">Apellido</label>
-            <input type="text" id="lastName" name="lastName" placeholder="Introduce tu apellido" className="formInput" />
+            <label htmlFor="lastName" className="formLabel">Apellido</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Introduce tu apellido" className="formInput" onChange={props.onChange} />
 
-            <label for="email" className="formLabel">Correo electrónico</label>
-            <input type="text" id="email" name="email" placeholder="Introduce tu correo electrónico" className="formInput" />
+            <label htmlFor="email" className="formLabel">Correo electrónico</label>
+            <input type="text" id="email" name="email" placeholder="Introduce tu correo electrónico" className="formInput" onChange={props.onChange} />
 
-            <label for="password" className="formLabel">Contraseña</label>
-            <input type="password" id="password" name="password" placeholder="Introduce tu contraseña" className="formInput" />
+            <label htmlFor="password" className="formLabel">Contraseña</label>
+            <input type="password" id="password" name="password" placeholder="Introduce tu contraseña" className="formInput" onChange={props.onChange} />
+
+            <label htmlFor="password2" className="formLabel">Confirmar Contraseña</label>
+            <input type="password" id="password2" name="password2" placeholder="Introduce tu contraseña" className="formInput" onChange={props.onChange} />
           </form>
-          <button className="btnRegister">Registrar</button>
+          <button type="submit" className="btnRegister" onClick={props.onSubmit}>Registrar</button>
         </div>
       </div>
     </main>

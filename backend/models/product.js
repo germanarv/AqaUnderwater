@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { TRUE } = require('node-sass');
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 const slug = require('slugs');
 
 const productSchema = new mongoose.Schema({
