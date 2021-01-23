@@ -63,10 +63,45 @@ exports.register = async (req, res) => {
       return res.send(400, err.message);
     }
 
+    let token = jwt.sign({
+      user: userDB
+    }, process.env.SEED_AUTHENTICATION, {
+      expiresIn: process.env.EXPIRATION_TOKEN
+    });
+
     res.status(200).json({
       ok: true,
-      user: userDB
+      user: userDB,
+      token
     });
   });
 
+};
+
+exports.isUserLogged = async (req, res, next) => {
+  const authHeaders = req.headers.authorization;
+  const token = authHeaders ? authHeaders.split(" ")[1] : "";
+
+  jwt.verify(token, process.env.SEED_AUTHENTICATION, (err, user) => {
+    if (err) return res.status(403).json({
+      message: 'Negativo pareja'
+    })
+
+    res.locals.user = user;
+    next();
+    return;
+  })
+};
+
+exports.isUserAdmin = async (req, res, next) => {
+  const { role } = res.locals.user.user;
+
+  if (role === 'ADMIN') {
+    next();
+    return;
+  }
+
+  return res.status(403).json({
+    message: 'Chale no eres admin'
+  });
 };

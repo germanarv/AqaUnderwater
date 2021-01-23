@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
   res.send('Hey! It works!');
 });
 
-router.post('/add', productController.createProduct);
+router.post('/add', accountController.isUserLogged, accountController.isUserAdmin, productController.createProduct);
 router.get('/products', productController.getProducts);
 router.get('/products/:id', productController.getOneProduct);
 router.post('/register', accountController.register);

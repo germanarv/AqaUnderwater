@@ -1,51 +1,66 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 import NavHeader from '../components/header/NavHeader.header';
 import MainFooter from '../components/footer/MainFooter.footer';
 import Register from '../components/account/Register.account';
+import AccountService from '../services/account.service';
 
 
 class RegisterMain extends Component {
 
   state = {
-    firstName: '',
-    lastName: '',
-    email: '',
-    password: '',
-    password2: ''
-  }
+    register: {
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
+      password2: ''
+    },
+    user: {
+      token: '',
+      firstName: '',
+      role: ''
+    }
+  };
 
   onSubmit = e => {
     e.preventDefault();
-    const { firstName, lastName, email, password, password2 } = this.state;
+    const { firstName, lastName, email, password, password2 } = this.state.register;
     if (password !== password2) {
       console.log('Passwords do not match');
     } else {
-      const config = {
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      };
-      const body = JSON.stringify({ firstName, lastName, email, password });
-      axios.post('http://localhost:8000/register', body, config)
-           .then(res => {
-              console.log(res.data);
-           })
-           .catch(err => {
-              console.log(err.message);
-           })
+      AccountService.register({ firstName, lastName, email, password })
+                    .then(res => {
+                      const { token, user } = res.data;
+                      this.setState({
+                        user: {
+                          token,
+                          firstName: user.firstName,
+                          role: user.role
+                        }
+                      });
+                    })
     }
   }
 
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
+  onChange = e => this.setState(prevState => ({ 
+    register: { 
+      ...prevState.register,
+      [e.target.name]: e.target.value 
+    }}));
 
   render() {
 
-    const { firstName, lastName, email, password, password2 } = this.state;
+    const { firstName, lastName, email, password, password2 } = this.state.register;
+
+    const { token } = this.state.user;
 
     return (
       <>
+        {token && 
+          <Redirect to="/" />
+        }
         <NavHeader />
         <Register 
           firstName={firstName}
