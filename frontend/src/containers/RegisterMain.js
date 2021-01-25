@@ -41,6 +41,9 @@ class RegisterMain extends Component {
                         }
                       });
                     })
+                    .catch(err => {
+                      console.log(err.message);
+                    })
     }
   }
 
@@ -53,7 +56,6 @@ class RegisterMain extends Component {
   render() {
 
     const { firstName, lastName, email, password, password2 } = this.state.register;
-
     const { token } = this.state.user;
 
     return (

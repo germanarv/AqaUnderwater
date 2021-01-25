@@ -1,44 +1,61 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 
 import NavHeader from '../components/header/NavHeader.header';
 import MainFooter from '../components/footer/MainFooter.footer';
 import SignIn from '../components/account/SignIn.account';
-import axios from 'axios';
+import AccountService from '../services/account.service';
 
 
 class SignInMain extends Component {
 
   state = {
-    email: '',
-    password: ''
+    login: {
+      email: '',
+      password: ''
+    },
+    user: {
+      token: '',
+      firstName: '',
+      role: ''
+    }
   };
 
   onSubmit = e => {
     e.preventDefault();
-    const { email, password } = this.state;
-    const config = {
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    };
-    const body = JSON.stringify({ email, password });
-    axios.post('http://localhost:8000/login', body, config)
-         .then(res => {
-           console.log(res.data);
-         })
-         .catch(err => {
-           console.log(err.message);
-         })
+    const { email, password } = this.state.login;
+    AccountService.login({ email, password })
+                  .then(res => {
+                    const { token, user } = res.data;
+                    this.setState({
+                      user: {
+                        token,
+                        firstName: user.firstName,
+                        role: user.role
+                      }
+                    });
+                  })
+                  .catch(err => {
+                    console.log(err.message);
+                  })
   }
 
-  onChange = e => this.setState({ [e.target.name]: e.target.value });
+  onChange = e => this.setState(prevState => ({
+    login: {
+      ...prevState.login,
+      [e.target.name]: e.target.value 
+    }}));
 
   render() {
 
-    const { email, password } = this.state;
+    const { email, password } = this.state.login;
+    const { token } = this.state.user;
 
     return (
       <>
+        {token &&
+          <Redirect to="/" />
+        }
         <NavHeader />
         <SignIn 
           email={email}
