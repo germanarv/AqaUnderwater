@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 const Product = mongoose.model('Product');
 
+
+const getPagination = (page, size) => {
+  const limit = size ? +size : 10;
+  const offset = page ? (page-1) * limit : 0;
+
+  return { limit, offset };
+};
+
 exports.createProduct = async (req, res) => {
   try {
     const product = new Product(req.body);
@@ -12,11 +20,17 @@ exports.createProduct = async (req, res) => {
 };
 
 exports.getProducts = (req, res) => {
-  Product.find(function(err, products) {
-    if (err) return res.send(500, err.message);
+  const { page, size } = req.body;
 
-    res.status(200).json(products);
-  })
+  const { limit, offset } = getPagination(page, size);
+
+  Product.paginate({}, { offset, limit })
+    .then(result => {
+      res.status(200).json(result);
+    })
+    .catch(err => {
+      res.send(500, err.message);
+    })
 };
 
 exports.getOneProduct = (req, res) => {

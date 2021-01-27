@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const { TRUE } = require('node-sass');
 // mongoose.Promise = global.Promise;
 const slug = require('slugs');
+const mongoosePaginate = require('mongoose-paginate-v2');
 
 const productSchema = new mongoose.Schema({
   name: {
@@ -33,5 +34,7 @@ productSchema.pre('save', function(next) {
   this.slug = slug(this.name);
   next();
 });
+
+productSchema.plugin(mongoosePaginate);
 
 module.exports = mongoose.model('Product', productSchema);
