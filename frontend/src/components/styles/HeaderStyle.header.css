@@ -3,11 +3,12 @@ header {
   flex-direction: column;
 }
 
-.upperNav {
+.upperNavDiv {
   display: flex;
   max-width: 100vw;
-  background-color: hsl(188, 85%, 40%);
+  background-color: #fff;
   align-items: center;
+  padding: 0.5rem 0;
 }
 
 .mainMenu {
@@ -15,32 +16,34 @@ header {
   margin-left: 2rem;
 }
 
+.logoDiv {
+  width: 100vw;
+  height: max-content;
+  background-color: hsl(188, 85%, 40%);
+  display: flex;
+  justify-content: center;
+}
+
 .logo {
-  height: 100%;
+  width: 100%;
+  max-width: 375px;
 }
 
 .logoLink {
   text-decoration: none;
-  height: 20vh;
-  margin-left: auto;
-  margin-right: auto;
+  height: 100%;
+  margin: 0;
 }
 
 .cartIcon {
-  color: #0f3d44;
+  color: hsl(188, 85%, 40%);
   font-size: 1.6rem;
   margin-left: auto;
   margin-right: 2rem;
 }
 
-.lowerNav {
-  display: flex;
-  max-width: 100vw;
-  justify-content: center;
-}
-
 .menuIcon {
-  color: #fbfeff;
+  color: hsl(188, 85%, 40%);
   font-size: 20px;
   position: relative;
   z-index: 20;
@@ -57,11 +60,13 @@ header {
 }
 
 .menu {
+  width: 100%;
   list-style-type: none;
   background-color: rgba(251, 254, 255, 0.95);
   color: #0f3d44;
   margin: 0;
-  font-weight: 800;
+  padding: 0;
+  font-weight: 500;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -83,24 +88,29 @@ header {
   flex-direction: column;
 }
 
-.lowerNav {
-  width: 100vw;
-  border-bottom: 1px solid hsl(188, 85%, 40%);
+.upperNav {
+  justify-content: center;
+  width: 100%;
+  margin: 0;
   display: none;
 }
 
-.topMenu {
-  padding: 0.7rem 0;
+.topMenuLink {
+  margin: 0 1rem;
+  cursor: pointer;
 }
 
-.topMenuLink {
-  margin: 0 2rem;
-  cursor: pointer;
+.topMenuHome {
+  margin: 0 auto 0 2rem;
+}
+
+.topMenuLast {
+  margin: 0 2.5rem 0 1rem;
 }
 
 .menuLink {
   text-decoration: none;
-  color: #0f3d44;
+  color: hsl(188, 85%, 40%);
 }
 
 .menuLink:hover {
@@ -116,10 +126,6 @@ header {
 }
 
 @media (min-width: 750px) {
-  .cartIcon {
-    margin-right: 3em;
-  }
-
   .mainMenu {
     margin-right: auto;
   }
@@ -127,14 +133,15 @@ header {
   .logo {
     height: 100%;
   }
-
-  .menuIcon {
-    margin-left: 3em;
-  }
 }
 
 @media (min-width: 770px) {
-  .lowerNav {
+  .cartIcon {
+    margin-right: 2em;
+    font-size: 1.2rem;
+  }
+
+  .upperNav {
     display: flex;
   }
 
@@ -142,7 +149,27 @@ header {
     display: none;
   }
 
-  .menuIcon {
+  .mainMenu {
     display: none;
+  }
+}
+
+@media (min-width: 850px) {
+  .topMenuLast {
+    margin: 0 3rem 0 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .topMenuLink {
+    margin: 0 2rem;
+  }
+
+  .topMenuHome {
+    margin: 0 auto 0 2rem;
+  }
+
+  .topMenuLast {
+    margin: 0 4rem 0 2rem;
   }
 }

@@ -1,6 +1,7 @@
 footer {
   margin-top: auto;
   background-color: hsl(188, 85%, 40%);
+  z-index: 50;
 }
 
 .footerMain {
